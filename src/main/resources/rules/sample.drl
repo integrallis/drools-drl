@@ -9,4 +9,13 @@ rule "LoggingWithLog4J"
 	    applicationLogger.info("SomeClass says " + object.getMessage());
 		
 end
+
+//rule "RinseAndRepeat"
+//    //no-loop
+//    when
+//        object : SomeClass(message == "Hey you!")
+//    then
+//        applicationLogger.info("Rinse and Repeat");
+//        update(object);
+//end
  
