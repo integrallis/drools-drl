@@ -1,0 +1,12 @@
+package org.integrallis.drools
+
+global org.apache.log4j.Logger applicationLogger
+
+rule "LoggingWithLog4J"
+	when
+		object : SomeClass()
+	then
+	    applicationLogger.info("SomeClass says " + object.getMessage());
+		
+end
+ 
