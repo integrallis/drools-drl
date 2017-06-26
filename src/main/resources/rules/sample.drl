@@ -3,19 +3,21 @@ package org.integrallis.drools
 global org.apache.log4j.Logger applicationLogger
 
 rule "LoggingWithLog4J"
+    no-loop
 	when
-		object : SomeClass()
+		foo : SomeClass()
 	then
-	    applicationLogger.info("SomeClass says " + object.getMessage());
+	    applicationLogger.info("SomeClass says " + foo.getMessage());
+	    update(foo);
 		
 end
 
-//rule "RinseAndRepeat"
-//    //no-loop
-//    when
-//        object : SomeClass(message == "Hey you!")
-//    then
-//        applicationLogger.info("Rinse and Repeat");
-//        update(object);
-//end
+rule "RinseAndRepeat"
+    no-loop
+    when
+        object : SomeClass(message == "Hey you!")
+    then
+        applicationLogger.info("Rinse and Repeat");
+        update(object);
+end
  
