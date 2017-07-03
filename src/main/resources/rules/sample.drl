@@ -13,7 +13,7 @@ rule "LoggingWithLog4J"
 end
 
 rule "RinseAndRepeat"
-    no-loop
+    //no-loop
     when
         object : SomeClass(message == "Hey you!")
     then
